@@ -1,0 +1,11 @@
+<%= @cocktail.name %>
+<%=link_to "Create new dose", new_cocktail_dose_path(cocktail_id: @cocktail.id), class: "btn btn-primary" %>
+
+
+<%= link_to "Delete", cocktail_path(@cocktail),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
+<% @cocktail.doses.each do |dose| %>
+  <%= dose.description  %>
+<% end %>
